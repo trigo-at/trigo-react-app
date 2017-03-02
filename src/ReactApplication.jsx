@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import configureStore from './configureStore';
 
-const { oneOfType, arrayOf, node, array } = PropTypes;
+const { oneOfType, arrayOf, node, object } = PropTypes;
 
 injectTapEventPlugin();
 
@@ -12,11 +12,7 @@ const propTypes = {
 		arrayOf(node),
 		node,
 	]).isRequired,
-	reducers: array,
-};
-
-const defaultProps = {
-	reducers: [],
+	reducers: object.isRequired,
 };
 
 export class ReactApplication extends Component {
