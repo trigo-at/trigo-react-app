@@ -2,7 +2,7 @@
   "name": "trigo-react-app",
   "version": "1.0.0",
   "description": "Heavily opinionated react app boilerplate",
-  "main": "dist/trigo-react-app.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:trigo-at/trigo-react-app.git",
   "author": "trigo GmbH <office@trigo.at> (http://www.trigo.at)",
@@ -28,6 +28,7 @@
     "boilerplate"
   ],
   "dependencies": {
+    "ramda": "^0.23.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",

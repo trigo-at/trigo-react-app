@@ -1,3 +1,40 @@
-import React from 'react';
+import React, { PropTypes, Component } from 'react';
+import { Provider } from 'react-redux';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import configureStore from './configureStore';
 
-export const ReactApplication = () => <h1>ReactApplication</h1>;
+const { oneOfType, arrayOf, node, array } = PropTypes;
+
+injectTapEventPlugin();
+
+const propTypes = {
+	children: oneOfType([
+		arrayOf(node),
+		node,
+	]).isRequired,
+	reducers: array,
+};
+
+const defaultProps = {
+	reducers: [],
+};
+
+export class ReactApplication extends Component {
+	constructor(props) {
+		super(props);
+		const { reducers } = this.props;
+		this.__STORE__ = configureStore(reducers);
+	}
+
+	render() {
+		const { children } = this.props;
+		return (
+			<Provider store={this.__STORE__}>
+				{children}
+			</Provider>
+		);
+	}
+}
+
+ReactApplication.propTypes = propTypes;
+ReactApplication.defaultProps = defaultProps;
