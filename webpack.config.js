@@ -20,14 +20,14 @@ plugins.push(new webpack.optimize.UglifyJsPlugin({
 
 const config = {
 	entry: {
-		app: ['./src/ReactApplication.jsx'],
+		app: ['./src/index.js'],
 	},
 	devtool: 'cheap-module-source-map',
 	output: {
 		path: path.join(__dirname, 'dist'),
-		publicPath: '/static/',
+		publicPath: '/',
 		filename: 'trigo-react-app.js',
-		library: 'ReactApplication',
+		library: 'trigo-react-app',
 		libraryTarget: 'umd',
 	},
 	externals: {
