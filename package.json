@@ -2,7 +2,7 @@
   "name": "trigo-react-app",
   "version": "1.1.0",
   "description": "Heavily opinionated react app boilerplate",
-  "main": "dist/index.js",
+  "main": "dist/trigo-react-app.js",
   "license": "MIT",
   "repository": "git@github.com:trigo-at/trigo-react-app.git",
   "author": "trigo GmbH <office@trigo.at> (http://www.trigo.at)",
@@ -38,7 +38,8 @@
     "redux-logger": "^2.8.1",
     "redux-router5": "^4.2.3",
     "redux-thunk": "^2.2.0",
-    "router5": "^4.5.1"
+    "router5": "^4.5.1",
+    "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
     "asset-require-hook": "^1.0.2",
@@ -71,7 +72,6 @@
     "eslint-plugin-mocha": "^4.8.0",
     "eslint-plugin-react": "^6.10.0",
     "file-loader": "^0.10.1",
-    "isomorphic-fetch": "^2.2.1",
     "istanbul": "^0.4.5",
     "jsdom": "^9.11.0",
     "mocha": "^3.2.0",

@@ -30,6 +30,18 @@ const config = {
 		library: 'ReactApplication',
 		libraryTarget: 'umd',
 	},
+	externals: {
+		ramda: 'ramda',
+		react: 'react',
+		'react-dom': 'react-dom',
+		'react-redux': 'react-redux',
+		'react-router5': 'react-router5',
+		'react-tap-event-plugin': 'react-tap-event-plugin',
+		redux: 'redux',
+		'redux-logger': 'redux-logger',
+		'redux-router5': 'redux-router5',
+		router5: 'router5',
+	},
 	module: {
 		rules: [
 			{ test: /\.jsx?$/, enforce: 'pre', loader: 'eslint-loader', exclude: /node_modules/ },
