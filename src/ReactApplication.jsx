@@ -33,4 +33,3 @@ export class ReactApplication extends Component {
 }
 
 ReactApplication.propTypes = propTypes;
-ReactApplication.defaultProps = defaultProps;
