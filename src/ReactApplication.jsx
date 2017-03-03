@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router5';
+import { ThemeProvider, injectGlobal } from 'styled-components';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import configureStore from './configureStore';
 import configureRouter from './configureRouter';
@@ -8,6 +9,14 @@ import configureRouter from './configureRouter';
 const { oneOfType, arrayOf, array, node, object, string } = PropTypes;
 
 injectTapEventPlugin();
+
+/* eslint-disable no-unused-expressions */
+injectGlobal`
+	* {
+		box-sizing: border-box;
+	}
+`;
+/* eslint-enable no-unused-expressions */
 
 const propTypes = {
 	children: oneOfType([
@@ -19,6 +28,7 @@ const propTypes = {
 	middlewares: array,
 	defaultRoute: string,
 	name: string,
+	theme: object,
 };
 
 const defaultProps = {
@@ -26,6 +36,7 @@ const defaultProps = {
 	defaultRoute: undefined,
 	name: undefined,
 	middlewares: [],
+	theme: {},
 };
 
 export class ReactApplication extends Component {
@@ -49,20 +60,24 @@ export class ReactApplication extends Component {
 	}
 
 	render() {
-		const { children, routes } = this.props;
+		const { children, routes, theme } = this.props;
 		if (routes) {
 			return (
-				<Provider store={this.__STORE__}>
-					<RouterProvider router={this.__ROUTER__}>
-						{children}
-					</RouterProvider>
-				</Provider>
+				<ThemeProvider theme={theme}>
+					<Provider store={this.__STORE__}>
+						<RouterProvider router={this.__ROUTER__}>
+							{children}
+						</RouterProvider>
+					</Provider>
+				</ThemeProvider>
 			);
 		}
 		return (
-			<Provider store={this.__STORE__}>
-				{children}
-			</Provider>
+			<ThemeProvider theme={theme}>
+				<Provider store={this.__STORE__}>
+					{children}
+				</Provider>
+			</ThemeProvider>
 		);
 	}
 }
