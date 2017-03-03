@@ -35,10 +35,15 @@ export class ReactApplication extends Component {
 			const router = configureRouter(routes, defaultRoute);
 			this.__ROUTER__ = router;
 			store = configureStore(reducers, {}, router, name);
+			this.__ROUTER__.setDependency('store', store);
 		} else {
 			store = configureStore(reducers, {}, undefined, name);
 		}
 		this.__STORE__ = store;
+	}
+
+	componentWillMount() {
+		this.__ROUTER__.start(() => { console.log('--- ROUTER STARTED ---'); }); // eslint-disable-line
 	}
 
 	render() {
