@@ -1,6 +1,6 @@
 {
   "name": "trigo-react-app",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Heavily opinionated react app boilerplate",
   "main": "dist/trigo-react-app.js",
   "license": "MIT",
