@@ -25,20 +25,21 @@ const defaultProps = {
 	routes: undefined,
 	defaultRoute: undefined,
 	name: undefined,
+	middlewares: [],
 };
 
 export class ReactApplication extends Component {
 	constructor(props) {
 		super(props);
-		const { reducers, routes, defaultRoute, name } = this.props;
+		const { reducers, routes, defaultRoute, middlewares, name } = this.props;
 		let store;
 		if (routes) {
 			const router = configureRouter(routes, defaultRoute);
 			this.__ROUTER__ = router;
-			store = configureStore(reducers, {}, router, name);
+			store = configureStore(reducers, {}, middlewares, router, name);
 			this.__ROUTER__.setDependency('store', store);
 		} else {
-			store = configureStore(reducers, {}, undefined, name);
+			store = configureStore(reducers, {}, middlewares, undefined, name);
 		}
 		this.__STORE__ = store;
 	}
