@@ -16,6 +16,7 @@ const propTypes = {
 	]).isRequired,
 	reducers: object.isRequired,
 	routes: array,
+	middlewares: array,
 	defaultRoute: string,
 	name: string,
 };

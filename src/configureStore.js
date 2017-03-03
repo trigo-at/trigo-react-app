@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import uuidv4 from 'uuid/v4';
 import { router5Middleware, router5Reducer } from 'redux-router5';
 
-export default (reducers = {}, initialState = {}, router = undefined, name = uuidv4()) => {
+export default (reducers = {}, initialState = {}, additionalMiddlewares = [], router = undefined, name = uuidv4()) => {
 	const composeEnhancers =
 		typeof window === 'object' &&
 		window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ // eslint-disable-line
@@ -21,7 +21,7 @@ export default (reducers = {}, initialState = {}, router = undefined, name = uui
 	} else {
 		reducer = combineReducers(reducers);
 	}
-	const middlewares = [loggerMiddleware, thunk];
+	const middlewares = [loggerMiddleware, thunk, ...additionalMiddlewares];
 	if (router) {
 		middlewares.push(router5Middleware(router));
 	}
