@@ -57,7 +57,9 @@ export class ReactApplication extends Component {
 	}
 
 	componentWillMount() {
-		this.__ROUTER__.start(() => { console.log('--- ROUTER STARTED ---'); }); // eslint-disable-line
+		if (this.__ROUTER__) {
+			this.__ROUTER__.start(() => { console.log('--- ROUTER STARTED ---'); }); // eslint-disable-line
+		}
 	}
 
 	render() {
