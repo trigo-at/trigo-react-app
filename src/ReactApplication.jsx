@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router5';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import 'normalize.css';
 import configureStore from './configureStore';
 import configureRouter from './configureRouter';
 

@@ -41,6 +41,8 @@ const config = {
 		'redux-logger': 'redux-logger',
 		'redux-router5': 'redux-router5',
 		router5: 'router5',
+		'normalize.css': 'normalize.css',
+		'styled-components': 'styled-components',
 	},
 	module: {
 		rules: [
@@ -62,12 +64,21 @@ const config = {
 						'transform-class-properties',
 					],
 				},
-
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: { minimize: true },
+					},
+				],
 			},
 		],
 	},
 	resolve: {
-		extensions: ['.js', '.jsx'],
+		extensions: ['.js', '.jsx', '.css'],
 	},
 	plugins: [
 		...plugins,
