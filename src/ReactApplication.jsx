@@ -15,6 +15,9 @@ injectTapEventPlugin();
 injectGlobal`
 	* {
 		box-sizing: border-box;
+		-webkit-appearance: none;
+		appearance:none;
+		outline: none;
 	}
 `;
 /* eslint-enable no-unused-expressions */
