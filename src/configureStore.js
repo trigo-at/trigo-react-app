@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import uuidv4 from 'uuid/v4';
 import { router5Middleware, router5Reducer } from 'redux-router5';

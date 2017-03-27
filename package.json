@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "isomorphic-fetch": "^2.2.1",
-    "normalize.css": "^5.0.0",
+    "normalize.css": "^6.0.0",
     "ramda": "^0.23.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -37,7 +37,7 @@
     "react-router5": "^4.0.1",
     "react-tap-event-plugin": "^2.0.1",
     "redux": "^3.6.0",
-    "redux-logger": "^2.10.2",
+    "redux-logger": "^3.0.0",
     "redux-router5": "^4.2.3",
     "redux-thunk": "^2.2.0",
     "router5": "^4.5.1",
@@ -49,7 +49,7 @@
     "autoprefixer": "^6.7.7",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
-    "babel-eslint": "^7.2.0",
+    "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -65,11 +65,11 @@
     "cross-env": "^3.2.4",
     "css-loader": "^0.27.3",
     "css-modules-require-hook": "^4.0.6",
-    "enzyme": "^2.7.1",
+    "enzyme": "^2.8.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-config-react-trigo": "^1.0.1",
-    "eslint-loader": "^1.6.3",
+    "eslint-loader": "^1.7.0",
     "eslint-plugin-compat": "^1.0.2",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
@@ -85,6 +85,6 @@
     "sinon-chai": "^2.9.0",
     "style-loader": "^0.16.0",
     "url-loader": "^0.5.8",
-    "webpack": "^2.3.1"
+    "webpack": "^2.3.2"
   }
 }
