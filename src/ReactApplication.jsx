@@ -19,6 +19,14 @@ injectGlobal`
 		appearance:none;
 		outline: none;
 	}
+
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		font-size: 100%;
+	}
 `;
 /* eslint-enable no-unused-expressions */
 
