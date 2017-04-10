@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router5';
 import { ThemeProvider, injectGlobal } from 'styled-components';
