@@ -40,6 +40,7 @@ const propTypes = {
 	routes: array,
 	middlewares: array,
 	defaultRoute: string,
+	base: string,
 	name: string,
 	theme: object,
 };
@@ -48,6 +49,7 @@ const defaultProps = {
 	routes: undefined,
 	defaultRoute: undefined,
 	name: undefined,
+	base: undefined,
 	middlewares: [],
 	theme: {},
 };
@@ -55,10 +57,10 @@ const defaultProps = {
 export class ReactApplication extends Component {
 	constructor(props) {
 		super(props);
-		const { reducers, routes, defaultRoute, middlewares, name } = this.props;
+		const { reducers, routes, defaultRoute, middlewares, name, base } = this.props;
 		let store;
 		if (routes) {
-			const router = configureRouter(routes, defaultRoute);
+			const router = configureRouter({ routes, defaultRoute, base });
 			this.__ROUTER__ = router;
 			store = configureStore(reducers, {}, middlewares, router, name);
 			this.__ROUTER__.setDependency('store', store);

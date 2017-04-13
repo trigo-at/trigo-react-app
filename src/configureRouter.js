@@ -3,7 +3,12 @@ import loggerPlugin from 'router5/plugins/logger';
 import listenersPlugin from 'router5/plugins/listeners';
 import browserPlugin from 'router5/plugins/browser';
 
-const configureRouter = (routes, defaultRoute, useListenersPlugin = true) => {
+const configureRouter = ({
+		routes,
+		defaultRoute,
+		base,
+		useListenersPlugin = true,
+	}) => {
 	const router = createRouter(routes, {
 		defaultRoute,
 		trailingSlash: true,
@@ -13,6 +18,7 @@ const configureRouter = (routes, defaultRoute, useListenersPlugin = true) => {
 	.usePlugin(loggerPlugin)
 	.usePlugin(browserPlugin({
 		useHash: false,
+		base,
 	}));
 
 	if (useListenersPlugin) {
