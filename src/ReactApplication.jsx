@@ -14,11 +14,16 @@ injectTapEventPlugin();
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
+	@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 	* {
 		box-sizing: border-box;
 		-webkit-appearance: none;
 		appearance:none;
 		outline: none;
+	}
+
+	html {
+		height: 100%;
 	}
 
 	button,
@@ -27,6 +32,14 @@ injectGlobal`
 	select,
 	textarea {
 		font-size: 100%;
+	}
+
+	.appContainer {
+		font-family: 'Roboto', sans-serif;
+		font-size: 16px;
+		min-height: 100%;
+		height: 100%;
+		margin: 0;
 	}
 `;
 /* eslint-enable no-unused-expressions */
