@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { oneOfType, arrayOf, array, node, object, string } from 'prop-types';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router5';
 import { ThemeProvider, injectGlobal } from 'styled-components';
@@ -7,8 +7,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import 'normalize.css';
 import configureStore from './configureStore';
 import configureRouter from './configureRouter';
-
-const { oneOfType, arrayOf, array, node, object, string } = PropTypes;
 
 injectTapEventPlugin();
 
